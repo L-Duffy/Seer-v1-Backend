@@ -1,8 +1,8 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user
   def index
-    images = Image.all
-    render json: images.as_json
+    @images = Image.all
+    render template: "images/index"
   end
 
   def create

@@ -17,7 +17,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTk5N
 
 
 ### images Show
-GET http://localhost:3000/images/3.json
+GET http://localhost:3000/images/1.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTk5NjJ9.8uWpNykfOZec6wyaLWww8O-SlWl0IYiI8_MnNZrPTH0
 
 ### images Update
