@@ -1,0 +1,10 @@
+{
+  user_id: @image.user_id,
+  image_url: @image.image_url,
+  name: @image.name,
+  description: @image.description,
+  tags: @image.tags,
+  id: @image.id,
+  created_at: @image.created_at,
+  updated_at: @image.updated_at
+}

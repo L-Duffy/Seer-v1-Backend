@@ -7,13 +7,13 @@ class ImagesController < ApplicationController
 
   def create
     authenticate_user
-    image = Image.new(
+    @image = Image.new(
       user_id: current_user.id,
       image_url: params[:image_url],
       name: params[:name],
       description: params[:description]
     )
-    image.save
+    @image.save
     tags = params[:tags]
     index = 0
     while index < tags.length
@@ -22,27 +22,27 @@ class ImagesController < ApplicationController
       )
       new_tag.save
       ImageTag.create(
-        image_id: image.id,
+        image_id: @image.id,
         tag_id: new_tag.id
       )
       index += 1
     end
-    render json: image.as_json
+    render template: "images/show"
   end
 
   def show
-    image = Image.find_by(id: params[:id])
-    render json: image.as_json
+    @image = Image.find_by(id: params[:id])
+    render template: "images/show"
   end
 
   def update
-    image = Image.find_by(id: params[:id])
-    image.update(
-      image_url: params[:image_url] || image.image_url,
-      name: params[:name] || image.name,
-      description: params[:description] || image.description
+    @image = Image.find_by(id: params[:id])
+    @image.update(
+      image_url: params[:image_url] || @image.image_url,
+      name: params[:name] || @image.name,
+      description: params[:description] || @image.description
     )
-    render as_json: {message: "Update successful"}
+    render template: "images/show"
   end
 
   def destroy
