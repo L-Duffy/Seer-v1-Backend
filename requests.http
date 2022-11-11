@@ -1,29 +1,28 @@
 # Authorization: Bearer 
 ### images Index
 GET http://localhost:3000/images.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTk5NjJ9.8uWpNykfOZec6wyaLWww8O-SlWl0IYiI8_MnNZrPTH0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTc1OTB9.jeh-yzkRHqW-fBFeZzpcpXWWWXI4ECf0cQlDAT0ZwB0
 
 ### images Create
 POST http://localhost:3000/images.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTk5NjJ9.8uWpNykfOZec6wyaLWww8O-SlWl0IYiI8_MnNZrPTH0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTc1OTB9.jeh-yzkRHqW-fBFeZzpcpXWWWXI4ECf0cQlDAT0ZwB0
 
 {
-  "image_url": "test.png",
   "name": "test name",
   "description": "test description",
-  "tags": ["rodeo", "zeus"]
+  "tags": "rodeo, zeus"
 }
 
 
 ### images Show
 GET http://localhost:3000/images/1.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTk5NjJ9.8uWpNykfOZec6wyaLWww8O-SlWl0IYiI8_MnNZrPTH0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTc1OTB9.jeh-yzkRHqW-fBFeZzpcpXWWWXI4ECf0cQlDAT0ZwB0
 
 ### images Update
 PATCH http://localhost:3000/images/3.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgwMTk5NjJ9.8uWpNykfOZec6wyaLWww8O-SlWl0IYiI8_MnNZrPTH0
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTc1OTB9.jeh-yzkRHqW-fBFeZzpcpXWWWXI4ECf0cQlDAT0ZwB0
 
 {
 "image_url": "new.png",

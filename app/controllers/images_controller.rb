@@ -7,14 +7,21 @@ class ImagesController < ApplicationController
 
   def create
     authenticate_user
+    response = Cloudinary::Uploader.upload(params[:image_url], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+    cloudinary_height = response["height"]
+    cloudinary_width = response["width"]
+
     @image = Image.new(
       user_id: current_user.id,
-      image_url: params[:image_url],
+      image_url: cloudinary_url,
       name: params[:name],
-      description: params[:description]
+      description: params[:description],
+      height: cloudinary_height,
+      width: cloudinary_width
     )
     @image.save
-    tags = params[:tags]
+    tags = params[:tags].split(/\s*,\s*/)
     index = 0
     while index < tags.length
       new_tag = Tag.new(
@@ -38,7 +45,6 @@ class ImagesController < ApplicationController
   def update
     @image = Image.find_by(id: params[:id])
     @image.update(
-      image_url: params[:image_url] || @image.image_url,
       name: params[:name] || @image.name,
       description: params[:description] || @image.description
     )
