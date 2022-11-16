@@ -11,7 +11,7 @@ bundle install
 rails db:create db:migrate db:seed
 ```
 
-You'll need to have the [frontend code]() running as well.
+You'll need to have the [frontend code](https://github.com/L-Duffy/Seer-v1-Frontend) running as well.
 
 ## Usage
 
