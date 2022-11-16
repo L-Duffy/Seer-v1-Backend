@@ -6,5 +6,7 @@
   tags: @image.tags,
   id: @image.id,
   created_at: @image.created_at,
-  updated_at: @image.updated_at
+  updated_at: @image.updated_at,
+  height: @image.height,
+  width: @image.width
 }

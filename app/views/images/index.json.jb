@@ -6,6 +6,8 @@
     description: image.description,
     tags: image.tags,
     id: image.id,
+    height: image.height,
+    width: image.width,
     # url: image_url(image, format: :json)
   }
 end

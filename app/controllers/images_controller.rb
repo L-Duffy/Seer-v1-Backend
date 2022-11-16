@@ -6,8 +6,8 @@ class ImagesController < ApplicationController
   end
 
   def create
-    authenticate_user
     response = Cloudinary::Uploader.upload(params[:image_url], resource_type: :auto)
+    p response
     cloudinary_url = response["secure_url"]
     cloudinary_height = response["height"]
     cloudinary_width = response["width"]
@@ -52,8 +52,14 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    authenticate_user
     image = Image.find_by(id: params[:id])
+    # index = 0
+    # while index < ImageTag.all.length
+    #   if image.id == ImageTag.all[index].image_id
+    #     ImageTag.all[index].destroy
+    #   end
+    #   index += 1
+    # end
     image.destroy
     render json: {message: "Image successfully destroyed"}
   end

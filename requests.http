@@ -31,7 +31,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjgxOTc1O
 }
 
 ### images Destroy
-DELETE http://localhost:3000/images/3.json
+DELETE http://localhost:3000/images/.json
 
 #######################################
 
