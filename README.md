@@ -1,24 +1,26 @@
-# README
+# Seer v1 (Backend)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Seer is a mobile-first photo library app with a tagging system for easy image access.
 
-Things you may want to cover:
+It utilizes a Ruby on Rails backend, React.js frontend, and Cloudinary for image hosting)
 
-* Ruby version
+## Installation
 
-* System dependencies
+```bash
+bundle install
+rails db:create db:migrate db:seed
+```
 
-* Configuration
+You'll need to have the [frontend code]() running as well.
 
-* Database creation
+## Usage
 
-* Database initialization
+```bash
+rails server
+```
 
-* How to run the test suite
+You can test web requests as documented in the `requests.http` file.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Roadmap
 
-* Deployment instructions
-
-* ...
+EXIF Metadata editing, dynamic Tailwind grid improvements, Tagging system overhaul, further CSS stylings.
